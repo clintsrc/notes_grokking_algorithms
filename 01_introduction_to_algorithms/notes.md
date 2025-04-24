@@ -26,6 +26,20 @@
 - **1.5** Run time to read all numbers in the phone book? O(n)
 - **1.6** Run time to read only the A's? O(n) because the algorithm is worst-case Big O. In Big O notation a constant is just a number and so O(n / 26) is not valid.
 
+## LeetCode Problems
+
+| # | Problem | Category | Time Complexity | Notes |
+|----|---------|----------|------------------|-------|
+| 1 | [Binary Search](https://leetcode.com/problems/binary-search/) | Binary Search | O(log n) | Textbook example of binary search. Must sort data if not already. |
+| 2 | [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) | Binary Search | O(log n) | Direct application of divide-and-conquer logic. |
+| 3 | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | Binary Search | O(log n) | Binary search with constraints. Classic "bounded range" pattern. |
+| 4 | [Find Target Indices After Sorting](https://leetcode.com/problems/find-target-indices-after-sorting-array/) | Sort + Linear Scan | O(n log n) + O(n) | Combines sorting with a simple linear pass. |
+| 5 | [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | Linear Scan / Set | O(n²) → O(n) | Brute force first, then optimize using a set. |
+| 6 | [Find Numbers With Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | Linear Search | O(n) | Good starter linear scan problem. |
+| 7 | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Binary Search | O(log n) | Binary search variant to find a potential insertion point. |
+| 8 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | Two Pointers / Sort | O(n log n) → O(n) | First thought is sorting; better solution uses two pointers. |
+
+
 ## Important Code Snippets
 ### Binary search O(log n)
 ```javascript
