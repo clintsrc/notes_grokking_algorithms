@@ -34,8 +34,6 @@
 | 2  | [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/) | Binary Search | O(log n) | Direct application of divide-and-conquer logic. |
 | 3  | [First Bad Version (278)](https://leetcode.com/problems/first-bad-version/) | Binary Search | O(log n) | Binary search with constraints. Classic "bounded range" pattern. |
 | 4  | [Find Target Indices After Sorting (2089)](https://leetcode.com/problems/find-target-indices-after-sorting-array/) | Sort + Linear Scan | O(n log n) + O(n) | Combines sorting with a simple linear pass. |
-| 5  | [Check If N and Its Double Exist (1346)](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | Linear Scan / Set | O(n²) → O(n) | Brute force first, then optimize using a set. |
-| 6  | [Find Numbers With Even Number of Digits (1295)](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | Linear Search | O(n) | Good starter linear scan problem. |
 | 7  | [Search Insert Position (35)](https://leetcode.com/problems/search-insert-position/) | Binary Search | O(log n) | Binary search variant to find a potential insertion point. |
 | 8  | [Squares of a Sorted Array (977)](https://leetcode.com/problems/squares-of-a-sorted-array/) | Two Pointers / Sort | O(n log n) → O(n) | First thought is sorting; better solution uses two pointers. |
 

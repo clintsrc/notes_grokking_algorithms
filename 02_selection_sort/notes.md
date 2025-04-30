@@ -2,10 +2,9 @@
 
 ## Key Concepts
 - **Array v Linked List**: focus on how they're mapped in memory: array is contiguous (expensive, potentially wasteful), linked list noncontiguous (dynamically mapped, allocated as needed, efficient)
-- **Arrays**: Direct read access (index is location)
+- **Arrays**: Direct read access (index is location). All elements in the array should be the same type (all ints, all doubles, etc).
 - **List**: Sequential access. Each element has a field that points to the next in the list. The discussion assumes if an available reference to the node for delete/add.
 - **Hybrid**: Array of linked lists: example array compartmentalized alphabetically, storing lists of items beginning with that letter
-- **Concept 3**: Brief explanation of concept.
 
 # Array vs List Operations
 
@@ -45,22 +44,43 @@
 
 ## LeetCode Problems
 
-| #  | Problem | Category | Time Complexity | Notes |
-|----|---------|----------|------------------|-------|
-| 1  | [Binary Search (704)](https://leetcode.com/problems/binary-search/) | Binary Search | O(log n) | Textbook example of binary search. Must sort data if not already. |
-| 2  | [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/) | Binary Search | O(log n) | Direct application of divide-and-conquer logic. |
-| 3  | [First Bad Version (278)](https://leetcode.com/problems/first-bad-version/) | Binary Search | O(log n) | Binary search with constraints. Classic "bounded range" pattern. |
-| 4  | [Find First and Last Position of Element in Sorted Array (34)](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Binary Search | O(log n) | Find the range of a target element in a sorted array. |
-| 5  | [Search a 2D Matrix (74)](https://leetcode.com/problems/search-a-2d-matrix/) | Binary Search | O(log m + log n) | Binary search in a 2D matrix. |
-| 6  | [Search a 2D Matrix II (240)](https://leetcode.com/problems/search-a-2d-matrix-ii/) | Binary Search | O(m + n) | Binary search variant in a matrix with sorted rows and columns. |
-| 7  | [Sort an Array (912)](https://leetcode.com/problems/sort-an-array/) | Sorting | O(n log n) | Implement sorting algorithms like quicksort, mergesort. |
-| 8  | [Sort Colors (75)](https://leetcode.com/problems/sort-colors/) | Sorting | O(n) | Sort using the Dutch National Flag algorithm. |
-| 9  | [Kth Largest Element in an Array (215)](https://leetcode.com/problems/kth-largest-element-in-an-array/) | Sorting / Heap | O(n log n) | Find the kth largest element using sorting or a heap. |
-| 10 | [Median of Two Sorted Arrays (4)](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Binary Search | O(log(min(n, m))) | Use binary search to find the median of two sorted arrays. |
-| 11 | [Binary Tree Level Order Traversal (102)](https://leetcode.com/problems/binary-tree-level-order-traversal/) | BFS | O(n) | Level-order traversal using breadth-first search (BFS). |
-| 12 | [Number of Islands (200)](https://leetcode.com/problems/number-of-islands/) | DFS | O(n * m) | Count the number of connected components using depth-first search (DFS). |
+| # | Problem | LeetCode # | Category | Time Complexity | Notes |
+|----|---------|------------|----------|------------------|-------|
+| 1 | [Find Maximum Number in Array](https://leetcode.com/problems/maximum-subarray/) | 53 | Linear Scan | O(n) | Focus only on identifying the largest element (not Kadane’s logic yet). |
+| 2 | [Find Numbers With Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | 1295 | Linear Scan | O(n) | Basic loop through array + number-to-string length check. |
+| 3 | [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | 1346 | Scan / Set | O(n²) → O(n) | Start with brute force, then use a `Set` for efficiency. |
+| 4 | [Find Target Indices After Sorting](https://leetcode.com/problems/find-target-indices-after-sorting-array/) | 2089 | Sort + Linear Scan | O(n log n) + O(n) | Combines sorting with targeted element selection. |
+| 5 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 977 | Two Pointers | O(n) | Optimized approach beats naive sort of squared values. |
+| 6 | [Count Items Matching a Rule](https://leetcode.com/problems/count-items-matching-a-rule/) | 1773 | Filter / Loop | O(n) | Simple filter-style logic, builds comfort with conditions. |
+| 7 | [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | 1351 | Grid Traversal | O(m + n) | Think row/column relationships in sorted data. |
 
 ## Important Code Snippets
-```javascript
-// Include key code examples you find important or tricky
-const example = "This is an important piece of code";
+### Selection Sort O(n²)
+```typescript
+function findSmallestIndex<T>(array: T[]): number {
+  let smallestIndex: number = 0;
+  let smallestElement: T = array[smallestIndex];
+
+  for (let i: number = 1; i < array.length; i++) {
+    if (array[i] < smallestElement) {
+      smallestElement = array[i];
+      smallestIndex = i;
+    }
+  }
+
+  return smallestIndex;
+}
+
+function selectionSort<T>(array: T[]): T[] {
+  const sortedArray: T[] = [];
+  const length = array.length;
+
+  for (let i: number = 0; i < length; i++) {
+    const smallestIndex: number = findSmallestIndex(array);
+    sortedArray.push(array.splice(smallestIndex, 1)[0]);
+  }
+
+  return sortedArray;
+}
+
+console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
