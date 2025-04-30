@@ -45,14 +45,13 @@
 ## LeetCode Problems
 
 | # | Problem | LeetCode # | Category | Time Complexity | Notes |
-|----|---------|------------|----------|------------------|-------|
-| 1 | [Find Maximum Number in Array](https://leetcode.com/problems/maximum-subarray/) | 53 | Linear Scan | O(n) | Focus only on identifying the largest element (not Kadane’s logic yet). |
-| 2 | [Find Numbers With Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | 1295 | Linear Scan | O(n) | Basic loop through array + number-to-string length check. |
-| 3 | [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | 1346 | Scan / Set | O(n²) → O(n) | Start with brute force, then use a `Set` for efficiency. |
-| 4 | [Find Target Indices After Sorting](https://leetcode.com/problems/find-target-indices-after-sorting-array/) | 2089 | Sort + Linear Scan | O(n log n) + O(n) | Combines sorting with targeted element selection. |
-| 5 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 977 | Two Pointers | O(n) | Optimized approach beats naive sort of squared values. |
-| 6 | [Count Items Matching a Rule](https://leetcode.com/problems/count-items-matching-a-rule/) | 1773 | Filter / Loop | O(n) | Simple filter-style logic, builds comfort with conditions. |
-| 7 | [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | 1351 | Grid Traversal | O(m + n) | Think row/column relationships in sorted data. |
+|---|---------|-------------|----------|------------------|-------|
+| 1 | [Sort Colors](https://leetcode.com/problems/sort-colors/) | 75 | Sorting (O(n)) | Uses a variation of selection-like partitioning (Dutch National Flag); avoids built-in sort. Reinforces selection-like sort behavior. |
+| 2 | [Remove Element](https://leetcode.com/problems/remove-element/) | 27 | Array manipulation | O(n) | Demonstrates how deletions work in arrays and the cost of shifting elements. |
+| 3 | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) | 380 | Array + HashMap | Avg O(1) | Great example of handling fast insert/delete with array and pointer tricks. |
+| 4 | [Design Linked List](https://leetcode.com/problems/design-linked-list/) | 707 | Linked List | O(n) for traversal | Directly explores manual linked list operations like insert, delete, and get. |
+| 5 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | 88 | Array insertions | O(n) | Highlights cost of merging arrays (insert/delete + shifting elements). |
+| 6 | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | 350 | Array/List traversal | O(n + m) | Compares approaches using arrays and hash maps—emphasizes linear scans and memory handling. |
 
 ## Important Code Snippets
 ### Selection Sort O(n²)
