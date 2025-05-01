@@ -83,3 +83,5 @@ function selectionSort<T>(array: T[]): T[] {
 }
 
 console.log(selectionSort([5, 3, 6, 2, 10])); // [2, 3, 5, 6, 10]
+```
+### The findSmallestIndex() function accesses elements in the input array multiple times to find the index of the smallest value. This is no different from an inner loop, and so the selection sort is quadratic O(n²) efficiency.
