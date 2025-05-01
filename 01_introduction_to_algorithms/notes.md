@@ -14,8 +14,8 @@
 - **O(1)**, constant time (access array element by index)
 - **O(log n)**, log time (binary search)
 - **O(n)**, linear time (simple search)
-- **O(n * log n)**. (fast sorting algorithm, ie quicksort)
-- **O(n²)**. (slow sorting algorithm, ie selection sort)
+- **O(n * log n)**, log-linear time (fast sorting algorithm, ie quicksort)
+- **O(n²)**, quadradic time (slow sorting algorithm, ie selection sort)
 - **O(n!)**. factorial time (very slow, ie the traveling salesperson)
 
 ## Exercises
